@@ -19,6 +19,7 @@ public class baseApplication extends Application {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/loginLayout.fxml")));
         Scene scene = new Scene(root);
         stage.setScene(scene);
+        root.requestFocus();
         stage.setResizable(false);
         stage.show();
     }

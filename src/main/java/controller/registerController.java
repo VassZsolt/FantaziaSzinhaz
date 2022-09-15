@@ -45,6 +45,7 @@ public class registerController {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/logInLayout.fxml")));
         stage.setScene(new Scene(root));
+        root.requestFocus();
         stage.show();
     }
 }

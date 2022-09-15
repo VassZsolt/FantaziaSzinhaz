@@ -43,6 +43,7 @@ public class loginController {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/signInLayout.fxml")));
         stage.setScene(new Scene(root));
+        root.requestFocus();
         stage.show();
     }
 }
