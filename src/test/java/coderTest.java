@@ -1,4 +1,4 @@
-import coder.Coder;
+/*import coder.Coder;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -36,4 +36,4 @@ public class coderTest {
         assertEquals(password, coder.decode(coder.encode(password)));
         assertTrue(password.equals(coder.decode(coder.encode(password))));
     }
-}
+}*/

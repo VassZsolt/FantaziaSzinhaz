@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="10.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.registerController">
+<VBox alignment="CENTER" fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="10.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegisterController">
    <children>
       <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -22,9 +22,11 @@
          </padding>
       </Label>
       <Label fx:id="emptyFieldsLabel" text="Hoppá! Valamelyik mező üres!" textFill="RED" visible="false" />
-      <TextField fx:id="nameField" promptText="Hogyan szólíthajtuk?" />
-      <TextField fx:id="emailField" promptText="e-mail" />
-      <PasswordField fx:id="passwordField" promptText="jelszó">
+      <Label fx:id="errorLabel" text="Sikertelen regisztráció, fiók már létezik!" textFill="RED" visible="false" />
+      <Label fx:id="invalidEmailLabel" text="Érvénytelen email formátum!" textFill="RED" />
+      <TextField fx:id="nameField" promptText="Hogyan szólíthatjuk?" />
+      <TextField fx:id="emailField" promptText="E-mail" />
+      <PasswordField fx:id="passwordField" promptText="Jelszó">
          <VBox.margin>
             <Insets bottom="20.0" />
          </VBox.margin>
