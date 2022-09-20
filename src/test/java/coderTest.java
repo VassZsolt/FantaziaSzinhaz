@@ -1,9 +1,9 @@
-import coder.Coder;
+import coder.coder;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class coderTest {
-    private final Coder coder=new Coder();
+    private final coder coder=new coder();
 
     @Test
     void encode(){
