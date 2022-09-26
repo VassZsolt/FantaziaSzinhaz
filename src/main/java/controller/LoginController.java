@@ -41,6 +41,8 @@ public class LoginController {
                 errorLabel.setManaged(true);
             } else {
                 showAlert(emailField.getText());
+                emailField.clear();
+                passwordField.clear();
             }
         } else {
             emptyFieldsLabel.setVisible(true);
@@ -56,7 +58,7 @@ public class LoginController {
     }
 
     private void showAlert(String email) {
-        ButtonType close = new ButtonType("Bezár");
+        ButtonType close = new ButtonType("OK");
         Alert alert = new Alert(Alert.AlertType.INFORMATION, "Sikeres bejelentkezés!", close);
         alert.setTitle("Sikeres bejelentkezés!");
         alert.setHeaderText("Sikeresen bejelentkeztél a következő fiókkal: " + email);

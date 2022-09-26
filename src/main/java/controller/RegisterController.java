@@ -7,14 +7,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.regex.Pattern;
 
 public class RegisterController {
@@ -59,6 +57,10 @@ public class RegisterController {
                         passwordField.getText()
                 );
                 Main.USER_REPOSITORY.saveUser(user);
+                showAlert(emailField.getText());
+                openLogInPanel(event);
+                emailField.clear();
+                passwordField.clear();
             }
         } else {
             emptyFieldsLabel.setVisible(true);
@@ -91,5 +93,15 @@ public class RegisterController {
         root.requestFocus();
         stage.show();
     }
+
+    private void showAlert(String email) {
+        ButtonType close = new ButtonType("OK");
+        Alert alert = new Alert(Alert.AlertType.INFORMATION, "Sikeres regisztráció!", close);
+        alert.setTitle("Sikeres regisztráció!");
+        alert.setHeaderText("Sikeresen regisztráltál a következő email-címmel: " + email);
+        Optional<ButtonType> result = alert.showAndWait();
+        alert.close();
+    }
+
 
 }
