@@ -13,7 +13,11 @@ import java.io.IOException;
 import java.util.Objects;
 import java.util.Optional;
 
+import coder.*;
+
 public class LoginController {
+
+    private coder coder=new coder();
     @FXML
     TextField emailField;
     @FXML
@@ -36,7 +40,7 @@ public class LoginController {
     public void logInButtonPressed(ActionEvent event) throws IOException {
         resetLabels();
         if (!fieldsEmpty()) {
-            if (!Main.USER_REPOSITORY.loadUser(emailField.getText(), passwordField.getText())) {
+            if (!Main.USER_REPOSITORY.loadUser(emailField.getText(), coder.encode(passwordField.getText()))) {
                 errorLabel.setVisible(true);
                 errorLabel.setManaged(true);
             } else {

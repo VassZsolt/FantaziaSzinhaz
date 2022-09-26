@@ -15,6 +15,8 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.regex.Pattern;
 
+import coder.*;
+
 public class RegisterController {
     @FXML
     TextField nameField;
@@ -34,6 +36,7 @@ public class RegisterController {
     Label invalidEmailLabel;
 
     private final String emailRegex = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$";
+    private coder coder=new coder();
 
     @FXML
     public void initialize() {
@@ -54,7 +57,7 @@ public class RegisterController {
                 User user = new User(
                         nameField.getText(),
                         emailField.getText(),
-                        passwordField.getText()
+                        coder.encode(passwordField.getText())
                 );
                 Main.USER_REPOSITORY.saveUser(user);
                 showAlert(emailField.getText());
