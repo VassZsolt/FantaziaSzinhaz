@@ -43,10 +43,13 @@ public class LoginController {
             if (!Main.USER_REPOSITORY.loadUser(emailField.getText(), coder.encode(passwordField.getText()))) {
                 errorLabel.setVisible(true);
                 errorLabel.setManaged(true);
+
             } else {
                 showAlert(emailField.getText());
                 emailField.clear();
                 passwordField.clear();
+                openMainPagePanel(event);
+
             }
         } else {
             emptyFieldsLabel.setVisible(true);
@@ -78,6 +81,14 @@ public class LoginController {
     public void openRegisterPanel(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/SignUpLayout.fxml")));
+        stage.setScene(new Scene(root));
+        root.requestFocus();
+        stage.show();
+    }
+    @FXML
+    public void openMainPagePanel(ActionEvent event) throws IOException {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/MainPageLayout.fxml")));
         stage.setScene(new Scene(root));
         root.requestFocus();
         stage.show();
