@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -77,7 +78,108 @@ public class MainPageController implements Initializable {
         }
     }
 
+    public void previousPlaysButtonPressed(ActionEvent event) throws IOException {
+        items.clear();
+        grid.getChildren().clear();
+        try {
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/fantazia_szinhaz", "root", "");
+            Statement stmt = conn.createStatement();
+            String query = "select eloadas.idopont as idopont, szindarab.nev as cim, mufaj.mufajnev as mufaj, rendezo.nev as szereplo from eloadas inner join szindarab \n" +
+                    "on eloadas.szindarabid=szindarab.szindarabid\n" +
+                    "inner join mufaj\n" +
+                    "on szindarab.mufajid=mufaj.mufajid\n" +
+                    "inner join rendezo\n" +
+                    "on szindarab.rendezoid=rendezo.rendezoid\n" +
+                    "where eloadas.idopont<CURRENT_DATE()";
+            ResultSet rs = stmt.executeQuery(query);
 
+            while (rs.next()) {
+                ListItem listItem = new ListItem();
+                listItem.setDate(rs.getDate("idopont"));
+                listItem.setTitle(rs.getString("cim"));
+                listItem.setGenre(rs.getString("mufaj"));
+                listItem.setName(rs.getString("szereplo"));
+
+                items.add(listItem);
+            }
+            listView.setOrientation(Orientation.HORIZONTAL);
+
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        int row=1;
+        try {
+            for (int i = 0; i < items.size(); i++) {
+
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("/ListItemLayout.fxml"));
+
+                AnchorPane anchorPane = fxmlLoader.load();
+
+                ListItemController listItemController = fxmlLoader.getController();
+                listItemController.setData(items.get(i));
+
+                grid.add(anchorPane, 0, row++);
+                GridPane.setMargin(anchorPane, new Insets(10));
+            }
+        } catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void nextPlaysButtonPressed(ActionEvent event) throws IOException {
+        items.clear();
+        grid.getChildren().clear();
+        try {
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/fantazia_szinhaz", "root", "");
+            Statement stmt = conn.createStatement();
+            String query = "select eloadas.idopont as idopont, szindarab.nev as cim, mufaj.mufajnev as mufaj, rendezo.nev as szereplo from eloadas inner join szindarab \n" +
+                    "on eloadas.szindarabid=szindarab.szindarabid\n" +
+                    "inner join mufaj\n" +
+                    "on szindarab.mufajid=mufaj.mufajid\n" +
+                    "inner join rendezo\n" +
+                    "on szindarab.rendezoid=rendezo.rendezoid\n" +
+                    "where eloadas.idopont>CURRENT_DATE()";
+            ResultSet rs = stmt.executeQuery(query);
+
+            while (rs.next()) {
+                ListItem listItem = new ListItem();
+                listItem.setDate(rs.getDate("idopont"));
+                listItem.setTitle(rs.getString("cim"));
+                listItem.setGenre(rs.getString("mufaj"));
+                listItem.setName(rs.getString("szereplo"));
+
+                items.add(listItem);
+            }
+            listView.setOrientation(Orientation.HORIZONTAL);
+
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        int row=1;
+        try {
+            for (int i = 0; i < items.size(); i++) {
+
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("/ListItemLayout.fxml"));
+
+                AnchorPane anchorPane = fxmlLoader.load();
+
+                ListItemController listItemController = fxmlLoader.getController();
+                listItemController.setData(items.get(i));
+
+                grid.add(anchorPane, 0, row++);
+                GridPane.setMargin(anchorPane, new Insets(10));
+
+            }
+
+        } catch(IOException e){
+            e.printStackTrace();
+        }
+
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         int row=1;
@@ -94,6 +196,7 @@ public class MainPageController implements Initializable {
 
                 grid.add(anchorPane, 0, row++);
                 GridPane.setMargin(anchorPane, new Insets(10));
+
             }
 
         } catch(IOException e){
