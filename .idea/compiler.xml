@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="theaterTicketBrowser" />
+        <module name="FantaziaSzinhaz" />
         <module name="Theater Ticket Browser" />
       </profile>
     </annotationProcessing>

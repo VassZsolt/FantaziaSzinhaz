@@ -1,0 +1,1295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="698.0" prefWidth="1068.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutX="214.0" layoutY="232.0">
+         <children>
+            <AnchorPane fx:id="seat1" style="-fx-background-radius: 5; -fx-background-color: lightgreen;">
+               <children>
+                  <ImageView fx:id="seat11" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11" layoutX="40.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat12" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat111" layoutX="80.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat13" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1111" layoutX="120.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat14" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11" layoutX="160.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat112" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat112" layoutX="200.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat121" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1112" layoutX="240.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat131" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11111" layoutX="280.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat141" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11" layoutX="320.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat113" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat113" layoutX="360.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat122" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1113" layoutX="400.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat132" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11112" layoutX="440.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat142" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat112" layoutX="480.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1121" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1121" layoutX="520.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1211" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11121" layoutX="560.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1311" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat111111" layoutX="600.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1411" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="214.0" layoutY="280.0">
+         <children>
+            <AnchorPane fx:id="seat11" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat11" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11" layoutX="40.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat121" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1111" layoutX="80.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat131" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11111" layoutX="120.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat141" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11" layoutX="160.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat112" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat112" layoutX="200.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1211" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11121" layoutX="240.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1311" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat111111" layoutX="280.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1411" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat111" layoutX="320.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat113" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1131" layoutX="360.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1221" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11131" layoutX="400.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1321" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat111121" layoutX="440.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1421" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1121" layoutX="480.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1121" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11211" layoutX="520.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat12111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat111211" layoutX="560.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat13111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1111111" layoutX="600.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat14111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="214.0" layoutY="327.0">
+         <children>
+            <AnchorPane fx:id="seat11" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat11" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11" layoutX="40.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1211" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11111" layoutX="80.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1311" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat111111" layoutX="120.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1411" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat111" layoutX="160.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat112" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1121" layoutX="200.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat12111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat111211" layoutX="240.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat13111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1111111" layoutX="280.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat14111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1111" layoutX="320.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1131" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11311" layoutX="360.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat12211" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat111311" layoutX="400.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat13211" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1111211" layoutX="440.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat14211" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1121" layoutX="480.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat11211" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat112111" layoutX="520.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat121111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1112111" layoutX="560.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat131111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11111111" layoutX="600.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat141111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="214.0" layoutY="378.0">
+         <children>
+            <AnchorPane fx:id="seat11" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat11" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat111" layoutX="40.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat12111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat111111" layoutX="80.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat13111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1111111" layoutX="120.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat14111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1111" layoutX="160.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1121" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1121" layoutX="200.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat121111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1112111" layoutX="240.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat131111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11111111" layoutX="280.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat141111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11111" layoutX="320.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat11311" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat113111" layoutX="360.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat122111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1113111" layoutX="400.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat132111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11112111" layoutX="440.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat142111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11211" layoutX="480.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat112111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1121111" layoutX="520.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1211111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11121111" layoutX="560.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1311111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat111111111" layoutX="600.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1411111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="214.0" layoutY="428.0">
+         <children>
+            <AnchorPane fx:id="seat11" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1111" layoutX="40.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat121111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1111111" layoutX="80.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat131111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11111111" layoutX="120.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat141111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11111" layoutX="160.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1121" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11211" layoutX="200.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1211111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11121111" layoutX="240.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1311111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat111111111" layoutX="280.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1411111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat111111" layoutX="320.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat113111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1131111" layoutX="360.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1221111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11131111" layoutX="400.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1321111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat111121111" layoutX="440.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1421111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat112111" layoutX="480.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1121111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11211111" layoutX="520.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat12111111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat111211111" layoutX="560.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat13111111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1111111111" layoutX="600.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat14111111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="214.0" layoutY="475.0">
+         <children>
+            <AnchorPane fx:id="seat111" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11111" layoutX="40.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1211111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11111111" layoutX="80.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1311111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat111111111" layoutX="120.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1411111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat111111" layoutX="160.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat11211" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat112111" layoutX="200.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat12111111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat111211111" layoutX="240.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat13111111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1111111111" layoutX="280.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat14111111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1111111" layoutX="320.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1131111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11311111" layoutX="360.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat12211111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat111311111" layoutX="400.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat13211111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1111211111" layoutX="440.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat14211111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1121111" layoutX="480.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat11211111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat112111111" layoutX="520.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat121111111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1112111111" layoutX="560.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat131111111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11111111111" layoutX="600.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat141111111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="seat11" layoutX="174.0" layoutY="232.0" style=" -fx-background-radius: 5;">
+         <children>
+            <ImageView fx:id="seat114" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@seat.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="seat1111112" layoutX="854.0" layoutY="232.0" style=" -fx-background-radius: 5;">
+         <children>
+            <ImageView fx:id="seat14112" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@seat.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="214.0" layoutY="521.0">
+         <children>
+            <AnchorPane fx:id="seat111111" layoutX="40.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat12111111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat111111111" layoutX="80.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat13111111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1111111111" layoutX="120.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat14111111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1111111" layoutX="160.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat112111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1121111" layoutX="200.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat121111111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1112111111" layoutX="240.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat131111111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11111111111" layoutX="280.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat141111111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11111111" layoutX="320.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat11311111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat113111111" layoutX="360.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat122111111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1113111111" layoutX="400.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat132111111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11112111111" layoutX="440.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat142111111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11211111" layoutX="480.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat112111111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1121111111" layoutX="520.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1211111111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11121111111" layoutX="560.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1311111111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <Rectangle fx:id="szinpad" arcHeight="5.0" arcWidth="5.0" fill="#e8e8e8" height="153.0" layoutX="214.0" layoutY="15.0" stroke="BLACK" strokeLineJoin="BEVEL" width="640.0" />
+      <AnchorPane layoutX="64.0" layoutY="167.0">
+         <children>
+            <AnchorPane fx:id="seat1114" layoutY="20.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat133" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11141" layoutY="60.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1331" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat111411" layoutX="47.0" style="-fx-background-radius: 5; -fx-background-color: lightcoral;">
+               <children>
+                  <ImageView fx:id="seat13311" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1114111" layoutX="47.0" layoutY="40.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat133111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="64.0" layoutY="277.0">
+         <children>
+            <AnchorPane fx:id="seat11141" layoutY="20.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1331" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat111411" layoutY="60.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat13311" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1114111" layoutX="47.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat133111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11141111" layoutX="47.0" layoutY="40.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1331111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="64.0" layoutY="378.0">
+         <children>
+            <AnchorPane fx:id="seat111411" layoutY="20.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat13311" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1114111" layoutY="60.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat133111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11141111" layoutX="47.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1331111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat111411111" layoutX="47.0" layoutY="40.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat13311111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="927.0" layoutY="168.0">
+         <children>
+            <AnchorPane fx:id="seat11212" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat12112" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat112121" layoutY="40.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat121121" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat112122" layoutX="48.0" layoutY="18.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat121122" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1121221" layoutX="48.0" layoutY="58.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1211221" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="927.0" layoutY="278.0">
+         <children>
+            <AnchorPane fx:id="seat112121" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat121121" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1121211" layoutY="40.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1211211" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat1121221" layoutX="48.0" layoutY="18.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1211221" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11212211" layoutX="48.0" layoutY="58.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat12112211" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="927.0" layoutY="379.0">
+         <children>
+            <AnchorPane fx:id="seat1121211" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat1211211" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11212111" layoutY="40.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat12112111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat11212211" layoutX="48.0" layoutY="18.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat12112211" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="seat112122111" layoutX="48.0" layoutY="58.0" style=" -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="seat121122111" fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@seat.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <Label layoutX="348.0" layoutY="65.0" text="Bánfalvy Ágnes színpad" textFill="#00000055">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

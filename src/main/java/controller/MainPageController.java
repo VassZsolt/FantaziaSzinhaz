@@ -13,7 +13,6 @@ import javafx.geometry.Orientation;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import javassist.bytecode.stackmap.BasicBlock;
 import model.ListItem;
 
 import java.util.ArrayList;
@@ -27,23 +26,6 @@ public class MainPageController implements Initializable {
     private GridPane grid;
 
     @FXML
-    private Button nextButton;
-
-    @FXML
-    private Button previousButton;
-
-    @FXML
-    private ScrollPane scroll;
-
-    @FXML
-    private TextField searchBar;
-
-    @FXML
-    private Button searchButton;
-
-    @FXML
-    private Button ticketButton;
-    @FXML
     ListView listView = new ListView();
 
     List<ListItem> items = new ArrayList<>();
@@ -54,22 +36,18 @@ public class MainPageController implements Initializable {
         try {
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/fantazia_szinhaz", "root", "");
             Statement stmt = conn.createStatement();
-            String query = "select eloadas.idopont as idopont, szindarab.nev as cim, mufaj.mufajnev as mufaj, rendezo.nev as szereplo from eloadas inner join szindarab\n" +
+            String query = "select eloadas.idopont as idopont, szindarab.nev as cim, mufaj.mufajnev as mufaj, rendezo.nev as szereplo, helyszin.nev as helyszin from eloadas inner join szindarab\n" +
                     "on eloadas.szindarabid=szindarab.szindarabid\n" +
                     "inner join mufaj\n" +
                     "on szindarab.mufajid=mufaj.mufajid\n" +
                     "inner join rendezo\n" +
-                    "on szindarab.rendezoid=rendezo.rendezoid";
+                    "on szindarab.rendezoid=rendezo.rendezoid\n" +
+                    "inner join helyszin\n" +
+                    "on eloadas.helyszin=helyszin.helyszinid";
             ResultSet rs = stmt.executeQuery(query);
 
             while (rs.next()) {
-                ListItem listItem = new ListItem();
-                listItem.setDate(rs.getDate("idopont"));
-                listItem.setTitle(rs.getString("cim"));
-                listItem.setGenre(rs.getString("mufaj"));
-                listItem.setName(rs.getString("szereplo"));
-
-                items.add(listItem);
+                setListItemData(rs);
             }
             listView.setOrientation(Orientation.HORIZONTAL);
 
@@ -84,31 +62,26 @@ public class MainPageController implements Initializable {
         try {
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/fantazia_szinhaz", "root", "");
             Statement stmt = conn.createStatement();
-            String query = "select eloadas.idopont as idopont, szindarab.nev as cim, mufaj.mufajnev as mufaj, rendezo.nev as szereplo from eloadas inner join szindarab \n" +
+            String query = "select eloadas.idopont as idopont, szindarab.nev as cim, mufaj.mufajnev as mufaj, rendezo.nev as szereplo, helyszin.nev as helyszin from eloadas inner join szindarab \n" +
                     "on eloadas.szindarabid=szindarab.szindarabid\n" +
                     "inner join mufaj\n" +
                     "on szindarab.mufajid=mufaj.mufajid\n" +
                     "inner join rendezo\n" +
                     "on szindarab.rendezoid=rendezo.rendezoid\n" +
+                    "inner join helyszin\n" +
+                    "on eloadas.helyszin=helyszin.helyszinid\n" +
                     "where eloadas.idopont<CURRENT_DATE()";
             ResultSet rs = stmt.executeQuery(query);
 
             while (rs.next()) {
-                ListItem listItem = new ListItem();
-                listItem.setDate(rs.getDate("idopont"));
-                listItem.setTitle(rs.getString("cim"));
-                listItem.setGenre(rs.getString("mufaj"));
-                listItem.setName(rs.getString("szereplo"));
-
-                items.add(listItem);
+                setListItemData(rs);
             }
             listView.setOrientation(Orientation.HORIZONTAL);
 
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        int row=1;
+        int row = 1;
         try {
             for (int i = 0; i < items.size(); i++) {
 
@@ -123,7 +96,7 @@ public class MainPageController implements Initializable {
                 grid.add(anchorPane, 0, row++);
                 GridPane.setMargin(anchorPane, new Insets(10));
             }
-        } catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -134,31 +107,26 @@ public class MainPageController implements Initializable {
         try {
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/fantazia_szinhaz", "root", "");
             Statement stmt = conn.createStatement();
-            String query = "select eloadas.idopont as idopont, szindarab.nev as cim, mufaj.mufajnev as mufaj, rendezo.nev as szereplo from eloadas inner join szindarab \n" +
+            String query = "select eloadas.idopont as idopont, szindarab.nev as cim, mufaj.mufajnev as mufaj, rendezo.nev as szereplo, helyszin.nev as helyszin from eloadas inner join szindarab \n" +
                     "on eloadas.szindarabid=szindarab.szindarabid\n" +
                     "inner join mufaj\n" +
                     "on szindarab.mufajid=mufaj.mufajid\n" +
                     "inner join rendezo\n" +
                     "on szindarab.rendezoid=rendezo.rendezoid\n" +
+                    "inner join helyszin\n" +
+                    "on eloadas.helyszin=helyszin.helyszinid\n" +
                     "where eloadas.idopont>CURRENT_DATE()";
             ResultSet rs = stmt.executeQuery(query);
 
             while (rs.next()) {
-                ListItem listItem = new ListItem();
-                listItem.setDate(rs.getDate("idopont"));
-                listItem.setTitle(rs.getString("cim"));
-                listItem.setGenre(rs.getString("mufaj"));
-                listItem.setName(rs.getString("szereplo"));
-
-                items.add(listItem);
+                setListItemData(rs);
             }
             listView.setOrientation(Orientation.HORIZONTAL);
 
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        int row=1;
+        int row = 1;
         try {
             for (int i = 0; i < items.size(); i++) {
 
@@ -175,14 +143,15 @@ public class MainPageController implements Initializable {
 
             }
 
-        } catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        int row=1;
+        int row = 1;
         try {
             for (int i = 0; i < items.size(); i++) {
 
@@ -199,8 +168,18 @@ public class MainPageController implements Initializable {
 
             }
 
-        } catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void setListItemData(ResultSet rs) throws SQLException {
+        ListItem listItem = new ListItem();
+        listItem.setDate(rs.getDate("idopont"));
+        listItem.setTitle(rs.getString("cim"));
+        listItem.setGenre(rs.getString("mufaj"));
+        listItem.setName(rs.getString("szereplo"));
+        listItem.setHall(rs.getString("helyszin"));
+        items.add(listItem);
     }
 }

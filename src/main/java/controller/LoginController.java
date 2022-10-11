@@ -17,7 +17,7 @@ import coder.*;
 
 public class LoginController {
 
-    private coder coder=new coder();
+    private coder coder = new coder();
     @FXML
     TextField emailField;
     @FXML
@@ -85,6 +85,7 @@ public class LoginController {
         root.requestFocus();
         stage.show();
     }
+
     @FXML
     public void openMainPagePanel(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

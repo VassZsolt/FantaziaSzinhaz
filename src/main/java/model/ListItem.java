@@ -1,8 +1,10 @@
 package model;
 
+import javafx.scene.control.ListCell;
+
 import java.util.Date;
 
-public class ListItem {
+public class ListItem extends ListCell<String>{
     String title;
 
     Date date;
@@ -10,6 +12,9 @@ public class ListItem {
     String name;
 
     String genre;
+
+    String hall;
+
 
     public String getTitle() {
         return title;
@@ -41,5 +46,13 @@ public class ListItem {
 
     public void setGenre(String genre) {
         this.genre = genre;
+    }
+
+    public String getHall() {
+        return hall;
+    }
+
+    public void setHall(String hall) {
+        this.hall = hall;
     }
 }
