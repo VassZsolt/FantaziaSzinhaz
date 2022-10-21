@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,21 +32,21 @@ public class MainPageController implements Initializable {
     List<ListItem> items = new ArrayList<>();
 
     public MainPageController() {
-
-
         try {
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/fantazia_szinhaz", "root", "");
             Statement stmt = conn.createStatement();
-            String query = "select eloadas.idopont as idopont, szindarab.nev as cim, mufaj.mufajnev as mufaj, rendezo.nev as szereplo, helyszin.nev as helyszin from eloadas inner join szindarab\n" +
-                    "on eloadas.szindarabid=szindarab.szindarabid\n" +
-                    "inner join mufaj\n" +
-                    "on szindarab.mufajid=mufaj.mufajid\n" +
-                    "inner join rendezo\n" +
-                    "on szindarab.rendezoid=rendezo.rendezoid\n" +
-                    "inner join helyszin\n" +
-                    "on eloadas.helyszin=helyszin.helyszinid where eloadas.idopont>=DATE_ADD(CURRENT_DATE, INTERVAL -1 MONTH)\n"+
-                    "and eloadas.idopont<=DATE_ADD(CURRENT_DATE, INTERVAL +1 MONTH)";
-            ResultSet rs = stmt.executeQuery(query);
+            String initialQuery = "select eloadas.idopont as idopont, szindarab.nev as cim, mufaj.mufajnev as mufaj, rendezo.nev as szereplo,helyszin.nev as helyszin\n"+
+            "from eloadas inner join szindarab\n"+
+            "on eloadas.szindarabid=szindarab.szindarabid\n"+
+            "inner join mufaj\n"+
+            "on szindarab.mufajid=mufaj.mufajid\n"+
+            "inner join rendezo\n"+
+            "on szindarab.rendezoid=rendezo.rendezoid\n"+
+            "inner join helyszin\n" +
+            "on eloadas.helyszin=helyszin.helyszinid\n"+
+            "where eloadas.idopont>=DATE_ADD(CURRENT_DATE, INTERVAL -1 MONTH)\n"+
+            "and eloadas.idopont<=DATE_ADD(CURRENT_DATE, INTERVAL 1 MONTH)\n"+ "order by eloadas.idopont";
+            ResultSet rs = stmt.executeQuery(initialQuery);
 
             while (rs.next()) {
                 setListItemData(rs);
@@ -58,59 +59,60 @@ public class MainPageController implements Initializable {
     }
 
     public void previousPlaysButtonPressed(ActionEvent event) throws IOException {
-        items.clear();
-        grid.getChildren().clear();
-        try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/fantazia_szinhaz", "root", "");
-            Statement stmt = conn.createStatement();
-            String query = "select eloadas.idopont as idopont, szindarab.nev as cim, mufaj.mufajnev as mufaj,\n"+
-                    "rendezo.nev as szereplo, helyszin.nev as helyszin from eloadas inner join szindarab\n"+
-                    "on eloadas.szindarabid=szindarab.szindarabid inner join mufaj on szindarab.mufajid=mufaj.mufajid\n"+
-                    "inner join rendezo on szindarab.rendezoid=rendezo.rendezoid inner join helyszin on\n"+
-                    "eloadas.helyszin=helyszin.helyszinid where eloadas.idopont>=DATE_ADD(CURRENT_DATE, INTERVAL -6 MONTH)\n"+
-                    "and eloadas.idopont<=CURRENT_DATE";
-            ResultSet rs = stmt.executeQuery(query);
-
-            while (rs.next()) {
-                setListItemData(rs);
-            }
-            listView.setOrientation(Orientation.HORIZONTAL);
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        int row = 1;
-        try {
-            for (int i = 0; i < items.size(); i++) {
-
-                FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/ListItemLayout.fxml"));
-
-                AnchorPane anchorPane = fxmlLoader.load();
-
-                ListItemController listItemController = fxmlLoader.getController();
-                listItemController.setData(items.get(i));
-
-                grid.add(anchorPane, 0, row++);
-                GridPane.setMargin(anchorPane, new Insets(10));
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        String queryPrevious = "select eloadas.idopont as idopont, szindarab.nev as cim, mufaj.mufajnev as mufaj,\n"+
+                "rendezo.nev as szereplo,helyszin.nev as helyszin from eloadas inner join szindarab\n"+
+                "on eloadas.szindarabid=szindarab.szindarabid inner join mufaj on szindarab.mufajid=mufaj.mufajid\n"+
+                "inner join rendezo on szindarab.rendezoid=rendezo.rendezoid inner join helyszin on\n"+
+                "eloadas.helyszin=helyszin.helyszinid \n"+
+                "where eloadas.idopont>=DATE_ADD(CURRENT_DATE, INTERVAL -6 MONTH)\n"+
+                "and eloadas.idopont<=CURRENT_DATE\n"+
+                "order by eloadas.idopont";
+        dataQuerying(queryPrevious);
     }
 
     public void nextPlaysButtonPressed(ActionEvent event) throws IOException {
-        items.clear();
-        grid.getChildren().clear();
+        String queryNext="select eloadas.idopont as idopont, szindarab.nev as cim, mufaj.mufajnev as mufaj,\n"+
+                "rendezo.nev as szereplo,helyszin.nev as helyszin\n" +
+                "from eloadas inner join szindarab\n"+
+                "on eloadas.szindarabid=szindarab.szindarabid inner join mufaj on szindarab.mufajid=mufaj.mufajid\n"+
+                "inner join rendezo on szindarab.rendezoid=rendezo.rendezoid \n"+
+                "inner join helyszin on\n"+
+                "eloadas.helyszin=helyszin.helyszinid\n"+
+                "where eloadas.idopont<=DATE_ADD(CURRENT_DATE, INTERVAL +12 MONTH)\n"+
+                "and eloadas.idopont>=CURRENT_DATE\n"+
+                "order by eloadas.idopont";
+        dataQuerying(queryNext);
+    }
+
+    public void startPageButtonPressed(ActionEvent event)throws IOException{
+        String queryStart="select eloadas.idopont as idopont, szindarab.nev as cim, mufaj.mufajnev as mufaj, rendezo.nev as szereplo,helyszin.nev as helyszin\n"+
+                "from eloadas inner join szindarab\n"+
+                "on eloadas.szindarabid=szindarab.szindarabid\n"+
+                "inner join mufaj\n"+
+                "on szindarab.mufajid=mufaj.mufajid\n"+
+                "inner join rendezo\n"+
+                "on szindarab.rendezoid=rendezo.rendezoid\n"+
+                "inner join helyszin\n" +
+                "on eloadas.helyszin=helyszin.helyszinid\n"+
+                "where eloadas.idopont>=DATE_ADD(CURRENT_DATE, INTERVAL -1 MONTH)\n"+
+                "and eloadas.idopont<=DATE_ADD(CURRENT_DATE, INTERVAL 1 MONTH)\n"+ "order by eloadas.idopont";
+        dataQuerying(queryStart);
+    }
+
+    public void exitButtonPressed(ActionEvent event)throws IOException{
+        Platform.exit();
+    }
+
+    public void dataQuerying(String query){
+        if (items.size()!=0) {
+            items.clear();
+        }
+        if (grid.getChildren().size()!=0) {
+            grid.getChildren().clear();
+        }
         try {
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/fantazia_szinhaz", "root", "");
             Statement stmt = conn.createStatement();
-            String query = "select eloadas.idopont as idopont, szindarab.nev as cim, mufaj.mufajnev as mufaj,\n"+
-                    "rendezo.nev as szereplo, helyszin.nev as helyszin from eloadas inner join szindarab\n"+
-                    "on eloadas.szindarabid=szindarab.szindarabid inner join mufaj on szindarab.mufajid=mufaj.mufajid\n"+
-                    "inner join rendezo on szindarab.rendezoid=rendezo.rendezoid inner join helyszin on\n"+
-                    "eloadas.helyszin=helyszin.helyszinid where eloadas.idopont<=DATE_ADD(CURRENT_DATE, INTERVAL +12 MONTH)\n"+
-                    "and eloadas.idopont>=CURRENT_DATE";
             ResultSet rs = stmt.executeQuery(query);
 
             while (rs.next()) {
@@ -135,13 +137,10 @@ public class MainPageController implements Initializable {
 
                 grid.add(anchorPane, 0, row++);
                 GridPane.setMargin(anchorPane, new Insets(10));
-
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     @Override
