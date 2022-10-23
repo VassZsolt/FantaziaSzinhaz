@@ -35,17 +35,7 @@ public class MainPageController implements Initializable {
         try {
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/fantazia_szinhaz", "root", "");
             Statement stmt = conn.createStatement();
-            String initialQuery = "select eloadas.idopont as idopont, szindarab.nev as cim, mufaj.mufajnev as mufaj, rendezo.nev as szereplo,helyszin.nev as helyszin\n"+
-            "from eloadas inner join szindarab\n"+
-            "on eloadas.szindarabid=szindarab.szindarabid\n"+
-            "inner join mufaj\n"+
-            "on szindarab.mufajid=mufaj.mufajid\n"+
-            "inner join rendezo\n"+
-            "on szindarab.rendezoid=rendezo.rendezoid\n"+
-            "inner join helyszin\n" +
-            "on eloadas.helyszin=helyszin.helyszinid\n"+
-            "where eloadas.idopont>=DATE_ADD(CURRENT_DATE, INTERVAL -1 MONTH)\n"+
-            "and eloadas.idopont<=DATE_ADD(CURRENT_DATE, INTERVAL 1 MONTH)\n"+ "order by eloadas.idopont";
+            String initialQuery = "call getAllPlays()";
             ResultSet rs = stmt.executeQuery(initialQuery);
 
             while (rs.next()) {
@@ -59,43 +49,17 @@ public class MainPageController implements Initializable {
     }
 
     public void previousPlaysButtonPressed(ActionEvent event) throws IOException {
-        String queryPrevious = "select eloadas.idopont as idopont, szindarab.nev as cim, mufaj.mufajnev as mufaj,\n"+
-                "rendezo.nev as szereplo,helyszin.nev as helyszin from eloadas inner join szindarab\n"+
-                "on eloadas.szindarabid=szindarab.szindarabid inner join mufaj on szindarab.mufajid=mufaj.mufajid\n"+
-                "inner join rendezo on szindarab.rendezoid=rendezo.rendezoid inner join helyszin on\n"+
-                "eloadas.helyszin=helyszin.helyszinid \n"+
-                "where eloadas.idopont>=DATE_ADD(CURRENT_DATE, INTERVAL -6 MONTH)\n"+
-                "and eloadas.idopont<=CURRENT_DATE\n"+
-                "order by eloadas.idopont";
+        String queryPrevious = "call getPreviousPlays()";
         dataQuerying(queryPrevious);
     }
 
     public void nextPlaysButtonPressed(ActionEvent event) throws IOException {
-        String queryNext="select eloadas.idopont as idopont, szindarab.nev as cim, mufaj.mufajnev as mufaj,\n"+
-                "rendezo.nev as szereplo,helyszin.nev as helyszin\n" +
-                "from eloadas inner join szindarab\n"+
-                "on eloadas.szindarabid=szindarab.szindarabid inner join mufaj on szindarab.mufajid=mufaj.mufajid\n"+
-                "inner join rendezo on szindarab.rendezoid=rendezo.rendezoid \n"+
-                "inner join helyszin on\n"+
-                "eloadas.helyszin=helyszin.helyszinid\n"+
-                "where eloadas.idopont<=DATE_ADD(CURRENT_DATE, INTERVAL +12 MONTH)\n"+
-                "and eloadas.idopont>=CURRENT_DATE\n"+
-                "order by eloadas.idopont";
+        String queryNext="call getNextPlays()";
         dataQuerying(queryNext);
     }
 
     public void startPageButtonPressed(ActionEvent event)throws IOException{
-        String queryStart="select eloadas.idopont as idopont, szindarab.nev as cim, mufaj.mufajnev as mufaj, rendezo.nev as szereplo,helyszin.nev as helyszin\n"+
-                "from eloadas inner join szindarab\n"+
-                "on eloadas.szindarabid=szindarab.szindarabid\n"+
-                "inner join mufaj\n"+
-                "on szindarab.mufajid=mufaj.mufajid\n"+
-                "inner join rendezo\n"+
-                "on szindarab.rendezoid=rendezo.rendezoid\n"+
-                "inner join helyszin\n" +
-                "on eloadas.helyszin=helyszin.helyszinid\n"+
-                "where eloadas.idopont>=DATE_ADD(CURRENT_DATE, INTERVAL -1 MONTH)\n"+
-                "and eloadas.idopont<=DATE_ADD(CURRENT_DATE, INTERVAL 1 MONTH)\n"+ "order by eloadas.idopont";
+        String queryStart="call getAllPlays()";
         dataQuerying(queryStart);
     }
 
