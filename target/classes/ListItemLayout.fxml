@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="550.0" stylesheets="ListItemLayout.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ListItemController">
+<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="600.0" stylesheets="ListItemLayout.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ListItemController">
    <children>
       <Label fx:id="titleText" layoutX="130.0" layoutY="14.0" prefHeight="26.0" prefWidth="183.0" text="Label">
          <font>
@@ -24,7 +24,7 @@
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Button fx:id="bookButton" layoutX="439.0" layoutY="52.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="86.0" text="Foglalok!" />
+      <Button fx:id="bookButton" layoutX="475.0" layoutY="53.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="86.0" text="Foglalok!" />
       <Label fx:id="theaterHallText" layoutX="203.0" layoutY="52.0" prefHeight="20.0" prefWidth="229.0" text="Label">
          <font>
             <Font size="13.0" />

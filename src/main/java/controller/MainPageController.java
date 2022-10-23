@@ -138,6 +138,8 @@ public class MainPageController implements Initializable {
         listItem.setGenre(rs.getString("mufaj"));
         listItem.setName(rs.getString("szereplo"));
         listItem.setHall(rs.getString("helyszin"));
+        listItem.setHallId(rs.getInt("helyszinid"));
         items.add(listItem);
     }
+
 }

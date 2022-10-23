@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import model.ListItem;
 import java.io.IOException;
@@ -34,7 +35,10 @@ public class ListItemController {
     @FXML
     private Label theaterHallText;
 
+    private int hallId;
+
     public void setData(ListItem listitem) {
+        hallId = listitem.getHallId();
         dateText.setText(listitem.getDate().toString());
         genreText.setText("Műfaj: " + listitem.getGenre());
         titleText.setText(listitem.getTitle());
@@ -55,8 +59,13 @@ public class ListItemController {
 
     @FXML
     public void openBookingPanel(ActionEvent event) throws IOException, SQLException {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/"+theaterHallText.getText()+".fxml"));
+        Parent root = fxmlLoader.load();
+        HallController hallController = fxmlLoader.getController();
+        hallController.setChoosenHallId(hallId);
+        hallController.initialize();
         Stage stage = new Stage();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/"+theaterHallText.getText()+".fxml")));
         stage.setScene(new Scene(root));
         root.requestFocus();
         stage.show();

@@ -15,6 +15,15 @@ public class ListItem extends ListCell<String>{
 
     String hall;
 
+    int hallId;
+
+    public int getHallId() {
+        return hallId;
+    }
+
+    public void setHallId(int hallId) {
+        this.hallId = hallId;
+    }
 
     public String getTitle() {
         return title;
