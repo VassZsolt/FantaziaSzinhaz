@@ -67,6 +67,29 @@ public class MainPageController implements Initializable {
         Platform.exit();
     }
 
+    @FXML
+    private TextField searchBar;
+
+    public void searchButtonPressed(ActionEvent event)throws IOException{
+        String text= searchBar.getText();
+        searchBar.clear();
+        String quarySearch=
+            "select distinct eas.idopont as idopont, sdb.nev as cim, mfj.mufajnev as mufaj, rzo.nev as szereplo, hszn.nev as helyszin, hszn.helyszinid as helyszinid \n" +
+            "from fantazia_szinhaz.eloadas eas \n" +
+            "inner join fantazia_szinhaz.szindarab sdb on eas.szindarabid=sdb.szindarabid \n" +
+            "inner join fantazia_szinhaz.mufaj mfj on sdb.mufajid=mfj.mufajid \n" +
+            "inner join fantazia_szinhaz.rendezo rzo on sdb.rendezoid=rzo.rendezoid \n" +
+            "inner join fantazia_szinhaz.helyszin hszn on eas.helyszin=hszn.helyszinid \n" +
+            "where \n" +
+            "(eas.idopont>=DATE_ADD(CURRENT_DATE, INTERVAL -1 MONTH) \n" +
+            "and eas.idopont<=DATE_ADD(CURRENT_DATE, INTERVAL 1 MONTH) \n" +
+            "and  sdb.nev like \'%"+text+"%\' \n)" +
+            "or CONVERT(eas.idopont,DATE)=REPLACE(REPLACE(LTRIM(RTRIM('"+text+"')),'.','-'),' ','-') \n" +
+            "order by eas.idopont;";
+
+        dataQuerying(quarySearch);
+    }
+
     public void dataQuerying(String query){
         if (items.size()!=0) {
             items.clear();
