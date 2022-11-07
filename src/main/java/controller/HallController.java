@@ -67,13 +67,16 @@ public class HallController {
 
                 SeatController seatController = fxmlLoader.getController();
                 seatController.setData(seats.get(i), onSeatClickListener);
-                System.out.println("sor: " + seats.get(i).getRow() + " oszlop: "+ seats.get(i).getColumn());
                 seatGrid.add(anchorPane, seats.get(i).getColumn(),seats.get(i).getRow());
                 GridPane.setMargin(anchorPane, new Insets(3));
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    @FXML
+    public void confirmReservation(){
+
     }
 
     public void setListData(ResultSet rs) throws SQLException {

@@ -30,7 +30,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="confirmButton" layoutX="649.0" layoutY="635.0" mnemonicParsing="false" text="Lefoglalom" />
+      <Button fx:id="confirmButton" layoutX="649.0" layoutY="635.0" mnemonicParsing="false" onAction="#confirmReservation" text="Lefoglalom" />
       <Label fx:id="columnLabel" layoutX="389.0" layoutY="614.0" prefHeight="17.0" prefWidth="196.0" text="Oszlop: ">
          <font>
             <Font size="14.0" />

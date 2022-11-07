@@ -38,5 +38,13 @@ public class SeatController {
 
     public void onClick(javafx.scene.input.MouseEvent mouseEvent) {
         onSeatClickListener.onClickListener(seat);
+        if (!seat.isReserved())
+            if (seat.isSelected()) {
+                seat.setSelected(false);
+                seatBackground.setStyle("-fx-background-color:  lightgreen");
+            } else {
+                seat.setSelected(true);
+                seatBackground.setStyle("-fx-background-color: Gold");
+            };
     }
 }
