@@ -7,10 +7,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import model.ListItem;
+import model.Play;
 import java.io.IOException;
 import java.sql.*;
 import java.util.Objects;
@@ -30,20 +30,22 @@ public class ListItemController {
     private Label genreText;
 
     @FXML
-    private Label titleText;
+    private Hyperlink titleText;
 
     @FXML
     private Label theaterHallText;
 
     private int hallId;
+    private int playId;
 
-    public void setData(ListItem listitem) {
-        hallId = listitem.getHallId();
-        dateText.setText(listitem.getDate().toString());
-        genreText.setText("Műfaj: " + listitem.getGenre());
-        titleText.setText(listitem.getTitle());
-        actorText.setText("Rendező: " + listitem.getName());
-        theaterHallText.setText(listitem.getHall());
+    public void setData(Play play) {
+        hallId = play.getHallId();
+        dateText.setText(play.getDate().toString());
+        genreText.setText("Műfaj: " + play.getGenre());
+        titleText.setText(play.getTitle());
+        actorText.setText("Rendező: " + play.getName());
+        theaterHallText.setText(play.getHall());
+        playId=play.getEloadasId();
 
         bookButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -51,6 +53,16 @@ public class ListItemController {
                 try {
                     openBookingPanel(event);
                 } catch (IOException | SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+        titleText.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                try {
+                    openDetailedPagePanel(event);
+                } catch (IOException /*| SQLException*/ e) {
                     throw new RuntimeException(e);
                 }
             }
@@ -65,6 +77,20 @@ public class ListItemController {
         HallController hallController = fxmlLoader.getController();
         hallController.setChoosenHallId(hallId);
         hallController.initialize();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        root.requestFocus();
+        stage.show();
+    }
+
+    @FXML
+    public void openDetailedPagePanel(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/DetailedPage.fxml"));
+        Parent root = fxmlLoader.load();
+        DetailedPageController detailedPageController = fxmlLoader.getController();
+        detailedPageController.setSelectedPlay(playId);
+        detailedPageController.initialize();
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         root.requestFocus();

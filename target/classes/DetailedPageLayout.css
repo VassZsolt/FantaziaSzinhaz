@@ -1,0 +1,19 @@
+#bookButton{
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-font-weight: bold;
+    -fx-background-color: #E2564D;
+    -fx-text-fill: white;
+}
+#bookButton:hover{
+    -fx-border-color: #D15047;
+    -fx-border-width: 2;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-font-weight: bold;
+    -fx-background-color: #f2766d;
+    -fx-text-fill: white;
+}
+#detailedTitle{
+    -fx-font-weight: bold;
+}

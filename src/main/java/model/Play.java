@@ -4,7 +4,7 @@ import javafx.scene.control.ListCell;
 
 import java.util.Date;
 
-public class ListItem extends ListCell<String>{
+public class Play extends ListCell<String>{
     String title;
 
     Date date;
@@ -14,11 +14,27 @@ public class ListItem extends ListCell<String>{
     String genre;
 
     String hall;
-
+    String description;
     int hallId;
 
+    int eloadasId;
+    public int getEloadasId() {
+        return eloadasId;
+    }
+
+    public void setEloadasId(int eloadasId) {
+        this.eloadasId = eloadasId;
+    }
     public int getHallId() {
         return hallId;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public void setHallId(int hallId) {

@@ -14,7 +14,7 @@ import javafx.geometry.Orientation;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import model.ListItem;
+import model.Play;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +29,7 @@ public class MainPageController implements Initializable {
     @FXML
     ListView listView = new ListView();
 
-    List<ListItem> items = new ArrayList<>();
+    List<Play> items = new ArrayList<>();
 
     public MainPageController() {
         try {
@@ -143,14 +143,15 @@ public class MainPageController implements Initializable {
     }
 
     public void setListItemData(ResultSet rs) throws SQLException {
-        ListItem listItem = new ListItem();
-        listItem.setDate(rs.getDate("idopont"));
-        listItem.setTitle(rs.getString("cim"));
-        listItem.setGenre(rs.getString("mufaj"));
-        listItem.setName(rs.getString("szereplo"));
-        listItem.setHall(rs.getString("helyszin"));
-        listItem.setHallId(rs.getInt("helyszinid"));
-        items.add(listItem);
+        Play play = new Play();
+        play.setDate(rs.getDate("idopont"));
+        play.setTitle(rs.getString("cim"));
+        play.setGenre(rs.getString("mufaj"));
+        play.setName(rs.getString("szereplo"));
+        play.setHall(rs.getString("helyszin"));
+        play.setHallId(rs.getInt("helyszinid"));
+        play.setEloadasId(rs.getInt("szinid"));
+        items.add(play);
     }
 
 }
