@@ -1,17 +1,19 @@
 package controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 import model.Seat;
 
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
@@ -96,6 +98,12 @@ public class HallController {
 
     public void setChoosenHallId(int choosenHallId) {
         this.choosenHallId = choosenHallId;
+    }
+
+    @FXML
+    public void closeWindow(ActionEvent event) throws IOException {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
     }
 
 }

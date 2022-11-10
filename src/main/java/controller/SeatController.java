@@ -1,23 +1,10 @@
 package controller;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
-import model.ListItem;
 import model.Seat;
 
-import java.awt.event.MouseEvent;
-import java.io.IOException;
-import java.sql.*;
-import java.util.Objects;
 
 public class SeatController {
 
