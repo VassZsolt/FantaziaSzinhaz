@@ -1,9 +1,23 @@
-#bookButton{
+#bookButton {
     -fx-background-radius: 10;
     -fx-border-radius: 10;
     -fx-font-weight: bold;
     -fx-background-color: #E2564D;
     -fx-text-fill: white;
+}
+#backButton {
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-font-weight: bold;
+    -fx-background-color: lightgrey;
+}
+#backButton:hover{
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-font-weight: bold;
+    -fx-background-color: #f37f76;
+    -fx-border-color: #dc675e;
+    -fx-border-width: 1;
 }
 #bookButton:hover{
     -fx-border-color: #D15047;
@@ -14,6 +28,21 @@
     -fx-background-color: #f2766d;
     -fx-text-fill: white;
 }
-#detailedTitle{
+#stackPane1, #stackPane2, #stackPane3, #stackPane4, #stackPane5, #stackPane6 {
+    -fx-background-color: #f7de9c;
+    -fx-background-radius: 10;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-border-color: gray;
+}
+#AnchorPane {
+    -fx-background-color: white;
+}
+#detailedTitle {
+    -fx-font-size: 25;
     -fx-font-weight: bold;
 }
+#hall, #date, #actors, #description, #genre {
+    -fx-font-size: 14;
+}
+
