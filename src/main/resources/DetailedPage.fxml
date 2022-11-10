@@ -55,7 +55,7 @@
       </StackPane>
       <StackPane fx:id="stackPane6" layoutX="153.0" layoutY="161.0" prefHeight="30.0" prefWidth="627.0">
          <children>
-            <Text fx:id="date" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="352.53668212890625" StackPane.alignment="CENTER_LEFT">
+            <Text fx:id="date" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="214.9366912841797" StackPane.alignment="CENTER_LEFT">
                <StackPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </StackPane.margin>

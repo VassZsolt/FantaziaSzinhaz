@@ -59,7 +59,7 @@ public class DetailedPageController {
             ResultSet rs = stmt.executeQuery(initialQuery);
             while (rs.next()) {
                 detailedTitle.setText(rs.getString("cim"));
-                date.setText("Időpont: "+rs.getDate("idopont").toString());
+                date.setText("Időpont: "+rs.getDate("idopont").toString()+" "+rs.getTime("idopont").toString());
                 hallName=rs.getString("helyszin");
                 hall.setText("Terem: "+hallName);
                 genre.setText("Műfaj: "+rs.getString("mufaj"));
