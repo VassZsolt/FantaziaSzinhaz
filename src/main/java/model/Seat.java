@@ -2,6 +2,7 @@ package model;
 
 public class Seat {
     private int id;
+    private int typeId;
     private boolean reserved;
     private int row;
     private int column;
@@ -21,6 +22,14 @@ public class Seat {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getTypeId() {
+        return typeId;
+    }
+
+    public void setTypeId(int typeId) {
+        this.typeId = typeId;
     }
 
     public boolean isReserved() {
@@ -56,4 +65,5 @@ public class Seat {
                 ", column=" + column +
                 '}';
     }
+
 }

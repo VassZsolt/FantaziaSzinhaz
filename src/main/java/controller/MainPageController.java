@@ -11,13 +11,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 import model.Play;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class MainPageController implements Initializable {
@@ -67,6 +72,25 @@ public class MainPageController implements Initializable {
         Platform.exit();
     }
 
+    public void getTickets(ActionEvent event) throws IOException {
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("call getUserTickets('" + Main.LOGGED_IN_USER.getId() + "')");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        openTicketsPanel(event);
+    }
+
+    @FXML
+    public void openTicketsPanel(ActionEvent event) throws IOException {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/TicketsLayout.fxml")));
+        stage.setScene(new Scene(root));
+        root.requestFocus();
+        stage.show();
+    }
+
     @FXML
     private TextField searchBar;
 
@@ -74,7 +98,6 @@ public class MainPageController implements Initializable {
         String text= searchBar.getText();
         searchBar.clear();
         String querySearch="call getPlaysContaining('"+text+"')";
-
         dataQuerying(querySearch);
     }
 
