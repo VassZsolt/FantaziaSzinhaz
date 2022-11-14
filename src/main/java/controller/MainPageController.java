@@ -26,6 +26,7 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class MainPageController implements Initializable {
+
     Connection conn;
 
     @FXML
@@ -85,7 +86,7 @@ public class MainPageController implements Initializable {
     @FXML
     public void openTicketsPanel(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/TicketsLayout.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/TicketItemLayout.fxml")));
         stage.setScene(new Scene(root));
         root.requestFocus();
         stage.show();
