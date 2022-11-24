@@ -53,7 +53,7 @@ public class HallController {
         try {
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/fantazia_szinhaz", "root", "");
             Statement stmt = conn.createStatement();
-            String initialQuery = "call getSeatsInHall(" + choosenHallId + ")";
+            String initialQuery = "call getSeatsForPlay(" + playId + ")";
             ResultSet rs = stmt.executeQuery(initialQuery);
 
             while (rs.next()) {
