@@ -76,6 +76,7 @@ public class ListItemController {
         Parent root = fxmlLoader.load();
         HallController hallController = fxmlLoader.getController();
         hallController.setChoosenHallId(hallId);
+        hallController.setPlayId(playId);
         hallController.initialize();
         Stage stage = new Stage();
         stage.setScene(new Scene(root));

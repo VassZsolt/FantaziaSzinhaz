@@ -51,30 +51,28 @@ public class UserRepository {
         return result;
     }
 
-    public boolean loadUser(String email, String password) {
+    public User loadUser(String email, String password) {
         EntityManager em = Main.ENTITY_MANAGER_FACTORY.createEntityManager();
         EntityTransaction transaction = null;
-        boolean result = false;
+        User user = null;
         try {
             transaction = em.getTransaction();
             transaction.begin();
-            TypedQuery<Long> query = em.createQuery("""
-                            select count(u)
+            TypedQuery<User> query = em.createQuery("""
+                            select u
                             from User u
                             where u.email = :email and u.password = :password
-                            """, Long.class)
+                            """, User.class)
                     .setParameter("email", email)
                     .setParameter("password", password);
-            if (query.getSingleResult() > 0) {
-                result = true;
-            }
+            user = query.getSingleResult();
             transaction.commit();
         } catch (Exception e) {
             e.printStackTrace();
             Objects.requireNonNull(transaction).rollback();
         }
         em.close();
-        return result;
+        return user;
     }
 
 }

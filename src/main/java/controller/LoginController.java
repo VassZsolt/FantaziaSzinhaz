@@ -1,5 +1,6 @@
 package controller;
 
+import database.entity.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -40,10 +41,11 @@ public class LoginController {
     public void logInButtonPressed(ActionEvent event) throws IOException {
         resetLabels();
         if (!fieldsEmpty()) {
-            if (!Main.USER_REPOSITORY.loadUser(emailField.getText(), coder.encode(passwordField.getText()))) {
+            User user = Main.USER_REPOSITORY.loadUser(emailField.getText(), coder.encode(passwordField.getText()));
+            Main.LOGGED_IN_USER = user;
+            if (user == null) {
                 errorLabel.setVisible(true);
                 errorLabel.setManaged(true);
-
             } else {
                 showAlert(emailField.getText());
                 emailField.clear();
