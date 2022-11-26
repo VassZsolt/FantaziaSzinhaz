@@ -7,8 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -23,6 +21,8 @@ public class HallController {
 
     Connection conn;
 
+    @FXML
+    Label hallNameLabel;
     @FXML
     GridPane seatGrid;
 
@@ -45,15 +45,18 @@ public class HallController {
     @FXML
     Button confirmButton;
     OnSeatClickListener onSeatClickListener;
-    private int choosenHallId;
+    private String choosenHallName;
     private int playId;
 
     @FXML
     void initialize() {
+        System.out.println("eloadas: " +playId+" ");
+        hallNameLabel.setText(choosenHallName);
         try {
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/fantazia_szinhaz", "root", "");
             Statement stmt = conn.createStatement();
             String initialQuery = "call getSeatsForPlay(" + playId + ")";
+            System.out.println(initialQuery);
             ResultSet rs = stmt.executeQuery(initialQuery);
 
             while (rs.next()) {
@@ -69,11 +72,10 @@ public class HallController {
 
         try {
             for (int i = 0; i < seats.size(); i++) {
-
+                System.out.println(seats.get(i));
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("/SeatLayout.fxml"));
                 AnchorPane anchorPane = fxmlLoader.load();
-
                 SeatController seatController = fxmlLoader.getController();
                 seatController.setData(seats.get(i), onSeatClickListener);
                 seatGrid.add(anchorPane, seats.get(i).getColumn(), seats.get(i).getRow());
@@ -137,8 +139,8 @@ public class HallController {
         priceLabel.setText("Ár: " + totalPrice);
     }
 
-    public void setChoosenHallId(int choosenHallId) {
-        this.choosenHallId = choosenHallId;
+    public void setChoosenHallName(String choosenHallName) {
+        this.choosenHallName = choosenHallName;
     }
 
     public void setPlayId(int playId) {

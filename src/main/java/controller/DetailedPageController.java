@@ -100,10 +100,10 @@ public class DetailedPageController {
     @FXML
     public void openBookingPanel(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/"+hallName+".fxml"));
+        fxmlLoader.setLocation(getClass().getResource("/theaterHallLayout.fxml"));
         Parent root = fxmlLoader.load();
         HallController hallController = fxmlLoader.getController();
-        hallController.setChoosenHallId(hallId);
+        hallController.setChoosenHallName(hallName);
         hallController.initialize();
         Stage stage = new Stage();
         stage.setScene(new Scene(root));

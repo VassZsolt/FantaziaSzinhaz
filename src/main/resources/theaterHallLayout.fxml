@@ -8,10 +8,10 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="698.0" prefWidth="1068.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HallController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="698.0" prefWidth="1068.0" stylesheets="theaterHallLayout.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HallController">
    <children>
       <Rectangle fx:id="stage" arcHeight="5.0" arcWidth="5.0" fill="#e8e8e8" height="155.0" layoutX="268.0" layoutY="15.0" stroke="BLACK" strokeLineJoin="BEVEL" width="531.0" />
-      <Label fx:id="hallNameLabel" layoutX="380.0" layoutY="66.0" text="Csathó Kálmán színpad" textFill="#00000055">
+      <Label fx:id="hallNameLabel" layoutX="380.0" layoutY="66.0" text="Barsi Ödön színpad" textFill="#00000055">
          <font>
             <Font size="36.0" />
          </font>
@@ -19,9 +19,9 @@
       <AnchorPane layoutX="160.0" layoutY="210.0" prefHeight="354.0" prefWidth="720.0">
          <children>
             <GridPane fx:id="seatGrid" alignment="TOP_CENTER" layoutX="8.0" layoutY="6.0" prefHeight="2.0" prefWidth="0.0">
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
             </GridPane>
          </children>
       </AnchorPane>
@@ -30,7 +30,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="confirmButton" layoutX="649.0" layoutY="635.0" mnemonicParsing="false" onAction="#confirmReservation" text="Lefoglalom" />
+      <Button fx:id="confirmButton" layoutX="660.0" layoutY="623.0" mnemonicParsing="false" onAction="#confirmReservation" prefHeight="37.0" prefWidth="95.0" text="Lefoglalom" />
       <Label fx:id="columnLabel" layoutX="389.0" layoutY="614.0" prefHeight="17.0" prefWidth="196.0" text="Oszlop: ">
          <font>
             <Font size="14.0" />
@@ -41,6 +41,6 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button layoutX="749.0" layoutY="635.0" mnemonicParsing="false" onAction="#closeWindow" text="Kilépés" />
+      <Button fx:id="exitButton" layoutX="777.0" layoutY="623.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="37.0" prefWidth="95.0" text="Kilépés" />
    </children>
 </AnchorPane>

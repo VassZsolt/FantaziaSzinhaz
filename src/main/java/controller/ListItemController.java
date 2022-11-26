@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 import model.Play;
 import java.io.IOException;
 import java.sql.*;
-import java.util.Objects;
+import java.util.Date;
 
 public class ListItemController {
 
@@ -67,15 +67,19 @@ public class ListItemController {
                 }
             }
         });
+        Date systemDate = new Date();
+        if (play.getDate().compareTo(systemDate) < 0){
+            bookButton.setDisable(true);
+        }
     }
 
     @FXML
     public void openBookingPanel(ActionEvent event) throws IOException, SQLException {
         FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/"+theaterHallText.getText()+".fxml"));
+        fxmlLoader.setLocation(getClass().getResource("/theaterHallLayout.fxml"));
         Parent root = fxmlLoader.load();
         HallController hallController = fxmlLoader.getController();
-        hallController.setChoosenHallId(hallId);
+        hallController.setChoosenHallName(theaterHallText.getText());
         hallController.setPlayId(playId);
         hallController.initialize();
         Stage stage = new Stage();

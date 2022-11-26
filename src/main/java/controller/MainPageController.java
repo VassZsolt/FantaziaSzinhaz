@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 
+import database.entity.Ticket;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,18 +12,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
 import model.Play;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class MainPageController implements Initializable {
@@ -35,7 +31,10 @@ public class MainPageController implements Initializable {
     @FXML
     ListView listView = new ListView();
 
-    List<Play> items = new ArrayList<>();
+    List<Play> plays = new ArrayList<>();
+
+    List<Ticket> tickets = new ArrayList<>();
+
 
     public MainPageController() {
         try {
@@ -56,17 +55,17 @@ public class MainPageController implements Initializable {
 
     public void previousPlaysButtonPressed(ActionEvent event) throws IOException {
         String queryPrevious = "call getPreviousPlays()";
-        dataQuerying(queryPrevious);
+        playDataQuerying(queryPrevious);
     }
 
     public void nextPlaysButtonPressed(ActionEvent event) throws IOException {
         String queryNext="call getNextPlays()";
-        dataQuerying(queryNext);
+        playDataQuerying(queryNext);
     }
 
     public void startPageButtonPressed(ActionEvent event)throws IOException{
         String queryStart="call getAllPlays()";
-        dataQuerying(queryStart);
+        playDataQuerying(queryStart);
     }
 
     public void exitButtonPressed(ActionEvent event)throws IOException{
@@ -76,23 +75,64 @@ public class MainPageController implements Initializable {
     public void getTickets(ActionEvent event) throws IOException {
         try {
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("call getUserTickets('" + Main.LOGGED_IN_USER.getId() + "')");
-            while (rs.next()) {
-                System.out.println(rs);
-            }
+            String query = "call getUserTickets('" + Main.LOGGED_IN_USER.getId() + "')";
+            ticketDataQuerying(query);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        //openTicketsPanel(event);
     }
 
-    @FXML
-    public void openTicketsPanel(ActionEvent event) throws IOException {
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/TicketItemLayout.fxml")));
-        stage.setScene(new Scene(root));
-        root.requestFocus();
-        stage.show();
+    private void ticketDataQuerying(String query) {
+        if (tickets.size()!=0) {
+            tickets.clear();
+        }
+        if (grid.getChildren().size()!=0) {
+            grid.getChildren().clear();
+        }
+        try {
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/fantazia_szinhaz", "root", "");
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+
+            while (rs.next()) {
+                setTicketListItemData(rs);
+            }
+            listView.setOrientation(Orientation.HORIZONTAL);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        int row = 1;
+        try {
+            for (Ticket ticket : tickets) {
+
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("/ticketListLayout.fxml"));
+
+                AnchorPane anchorPane = fxmlLoader.load();
+
+                TicketListItemController ticketListItemController = fxmlLoader.getController();
+                ticketListItemController.setData(ticket);
+
+                grid.add(anchorPane, 0, row++);
+                GridPane.setMargin(anchorPane, new Insets(10));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void setTicketListItemData(ResultSet rs) throws SQLException {
+        Ticket ticket = new Ticket();
+        ticket.setPrice(rs.getInt("ar"));
+        ticket.setPlayId(rs.getInt("szinid"));
+        ticket.setSeatId(rs.getInt("ulohely"));
+        ticket.setDate(rs.getDate("idopont"));
+        ticket.setTitle(rs.getString("cim"));
+        ticket.setHallName(rs.getString("helyszin"));
+        ticket.setEmail(rs.getString("email"));
+        ticket.setNickname(rs.getString("username"));
+        tickets.add(ticket);
     }
 
     @FXML
@@ -102,12 +142,12 @@ public class MainPageController implements Initializable {
         String text= searchBar.getText();
         searchBar.clear();
         String querySearch="call getPlaysContaining('"+text+"')";
-        dataQuerying(querySearch);
+        playDataQuerying(querySearch);
     }
 
-    public void dataQuerying(String query){
-        if (items.size()!=0) {
-            items.clear();
+    public void playDataQuerying(String query){
+        if (plays.size()!=0) {
+            plays.clear();
         }
         if (grid.getChildren().size()!=0) {
             grid.getChildren().clear();
@@ -127,7 +167,7 @@ public class MainPageController implements Initializable {
         }
         int row = 1;
         try {
-            for (int i = 0; i < items.size(); i++) {
+            for (Play play : plays) {
 
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("/ListItemLayout.fxml"));
@@ -135,7 +175,7 @@ public class MainPageController implements Initializable {
                 AnchorPane anchorPane = fxmlLoader.load();
 
                 ListItemController listItemController = fxmlLoader.getController();
-                listItemController.setData(items.get(i));
+                listItemController.setData(play);
 
                 grid.add(anchorPane, 0, row++);
                 GridPane.setMargin(anchorPane, new Insets(10));
@@ -149,7 +189,7 @@ public class MainPageController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         int row = 1;
         try {
-            for (int i = 0; i < items.size(); i++) {
+            for (int i = 0; i < plays.size(); i++) {
 
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("/ListItemLayout.fxml"));
@@ -157,7 +197,7 @@ public class MainPageController implements Initializable {
                 AnchorPane anchorPane = fxmlLoader.load();
 
                 ListItemController listItemController = fxmlLoader.getController();
-                listItemController.setData(items.get(i));
+                listItemController.setData(plays.get(i));
 
                 grid.add(anchorPane, 0, row++);
                 GridPane.setMargin(anchorPane, new Insets(10));
@@ -177,8 +217,8 @@ public class MainPageController implements Initializable {
         play.setName(rs.getString("szereplo"));
         play.setHall(rs.getString("helyszin"));
         play.setHallId(rs.getInt("helyszinid"));
-        play.setEloadasId(rs.getInt("szinid"));
-        items.add(play);
+        play.setEloadasId(rs.getInt("eloadasid"));
+        plays.add(play);
     }
 
 }

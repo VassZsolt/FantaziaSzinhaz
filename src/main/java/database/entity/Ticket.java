@@ -4,6 +4,7 @@ import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "jegy")
@@ -30,6 +31,12 @@ public class Ticket {
 
     @Column(nullable = false)
     private long price;
+
+    private String hallName;
+    private String title;
+    private Date date;
+    private String email;
+    private String nickname;
 
     public Ticket(Integer userId, Integer playId, Integer seatId, long price) {
         this.userId = userId;

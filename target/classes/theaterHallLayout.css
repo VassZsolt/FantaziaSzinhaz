@@ -1,0 +1,30 @@
+#confirmButton {
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-font-weight: bold;
+    -fx-background-color: #f5d47f;
+}
+
+#confirmButton:hover {
+    -fx-border-color: #DCB656;
+    -fx-border-width: 2;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-font-weight: bold;
+    -fx-background-color: #EEC65D;
+}
+
+#exitButton{
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-font-weight: bold;
+    -fx-background-color: lightgrey;
+}
+#exitButton:hover{
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-font-weight: bold;
+    -fx-background-color: #f37f76;
+    -fx-border-color: #dc675e;
+    -fx-border-width: 1;
+}
