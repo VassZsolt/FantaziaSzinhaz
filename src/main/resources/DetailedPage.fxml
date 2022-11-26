@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
@@ -11,7 +12,7 @@
    <children>
       <Separator layoutX="129.0" layoutY="-8.0" orientation="VERTICAL" prefHeight="658.0" prefWidth="6.0" />
       <Button fx:id="backButton" layoutX="30.0" layoutY="91.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="30.0" prefWidth="72.0" text="Vissza" />
-      <Button fx:id="bookButton" layoutX="370.0" layoutY="572.0" mnemonicParsing="false" onAction="#openBookingPanel" prefHeight="47.0" prefWidth="148.0" text="Foglalás" />
+      <Button fx:id="bookButton" layoutX="30.0" layoutY="152.0" mnemonicParsing="false" onAction="#openBookingPanel" prefHeight="30.0" prefWidth="72.0" text="Foglalás" />
       <StackPane fx:id="stackPane1" layoutX="153.0" layoutY="244.0" prefHeight="30.0" prefWidth="627.0">
          <children>
             <Text fx:id="genre" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="313.33674240112305" StackPane.alignment="CENTER_LEFT">
@@ -44,15 +45,23 @@
             <Text fx:id="detailedTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" StackPane.alignment="CENTER" />
          </children>
       </StackPane>
-      <StackPane fx:id="stackPane5" layoutX="151.0" layoutY="301.0" prefHeight="95.0" prefWidth="627.0">
-         <children>
-            <Text fx:id="actors" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="285.3367416858673" StackPane.alignment="TOP_LEFT">
-               <StackPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </StackPane.margin>
-            </Text>
-         </children>
-      </StackPane>
+      <ScrollPane layoutX="153.0" layoutY="291.0" prefHeight="95.0" prefWidth="627.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="232.0" prefWidth="550.0">
+               <children>
+                  <StackPane fx:id="stackPane5" prefHeight="271.0" prefWidth="610.0">
+                     <children>
+                        <Text fx:id="actors" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="285.3367416858673" StackPane.alignment="TOP_LEFT">
+                           <StackPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </StackPane.margin>
+                        </Text>
+                     </children>
+                  </StackPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
       <StackPane fx:id="stackPane6" layoutX="153.0" layoutY="161.0" prefHeight="30.0" prefWidth="627.0">
          <children>
             <Text fx:id="date" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="214.9366912841797" StackPane.alignment="CENTER_LEFT">
@@ -60,6 +69,16 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </StackPane.margin>
             </Text>
+         </children>
+      </StackPane>
+      <StackPane fx:id="stackPane7" layoutX="158.0" layoutY="544.0" prefHeight="22.0" prefWidth="627.0">
+         <children>
+            <Text fx:id="pause" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" StackPane.alignment="CENTER_LEFT" />
+         </children>
+      </StackPane>
+      <StackPane fx:id="stackPane8" layoutX="158.0" layoutY="574.0" prefHeight="30.0" prefWidth="627.0">
+         <children>
+            <Text fx:id="ageLimit" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" StackPane.alignment="CENTER_LEFT" />
          </children>
       </StackPane>
    </children>
