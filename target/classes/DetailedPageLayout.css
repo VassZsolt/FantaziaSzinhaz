@@ -28,7 +28,7 @@
     -fx-background-color: #f2766d;
     -fx-text-fill: white;
 }
-#stackPane1, #stackPane2, #stackPane3, #stackPane4, #stackPane5, #stackPane6 {
+#stackPane1, #stackPane2, #stackPane3, #stackPane4, #stackPane5, #stackPane6, #stackPane7, #stackPane8 {
     -fx-background-color: #f7de9c;
     -fx-background-radius: 10;
     -fx-border-width: 1;
@@ -42,7 +42,7 @@
     -fx-font-size: 25;
     -fx-font-weight: bold;
 }
-#hall, #date, #actors, #description, #genre {
+#hall, #date, #actors, #description, #genre, #ageLimit, #pause {
     -fx-font-size: 14;
 }
 

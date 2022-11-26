@@ -87,7 +87,7 @@ public class HallController {
     @FXML
     public void confirmReservation(ActionEvent event) throws IOException {
         for (Map.Entry<Seat, Long> value : selectedSeats.entrySet()) {
-            Ticket ticket = new Ticket(Main.LOGGED_IN_USER.getId(), playId, value.getKey().getRow(), value.getKey().getColumn(), value.getValue());
+            Ticket ticket = new Ticket(Main.LOGGED_IN_USER.getId(), playId, value.getKey().getId(), value.getValue());
             Main.TICKET_REPOSITORY.saveTicket(ticket);
         }
         showAlert(event);

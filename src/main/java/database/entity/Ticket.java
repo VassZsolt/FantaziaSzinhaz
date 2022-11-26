@@ -26,19 +26,15 @@ public class Ticket {
     private Integer playId;
 
     @Column(nullable = false)
-    private Integer rowNumber;
-
-    @Column(nullable = false)
-    private Integer columnNumber;
+    private Integer seatId;
 
     @Column(nullable = false)
     private long price;
 
-    public Ticket(Integer userId, Integer playId, Integer rowNumber, Integer columnNumber, long price) {
+    public Ticket(Integer userId, Integer playId, Integer seatId, long price) {
         this.userId = userId;
         this.playId = playId;
-        this.rowNumber = rowNumber;
-        this.columnNumber = columnNumber;
+        this.seatId = seatId;
         this.price = price;
     }
 

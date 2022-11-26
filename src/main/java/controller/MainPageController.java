@@ -77,10 +77,13 @@ public class MainPageController implements Initializable {
         try {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("call getUserTickets('" + Main.LOGGED_IN_USER.getId() + "')");
+            while (rs.next()) {
+                System.out.println(rs);
+            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        openTicketsPanel(event);
+        //openTicketsPanel(event);
     }
 
     @FXML
