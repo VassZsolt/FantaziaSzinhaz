@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.*;
+import java.util.Date;
 
 public class DetailedPageController {
 
@@ -47,6 +48,8 @@ public class DetailedPageController {
     int playid,szindarabid,n=-1;
     String hallName;
     String actorsCharacters="Szereplők:\n";
+
+    private Date dateOfPlay;
     @FXML
     void initialize() {
         try {
@@ -69,11 +72,12 @@ public class DetailedPageController {
                 hallName=rs.getString("helyszin");
                 hall.setText("Terem: "+hallName);
                 genre.setText("Műfaj: "+rs.getString("mufaj"));
-                description.setText("Leírás: "+rs.getString("leiras"));
+                description.setText(rs.getString("leiras"));
                 description.setWrappingWidth(590);
                 hallId = rs.getInt("helyszinid");
                 ageLimit.setText("Korhatár: "+rs.getString("korhatar"));
                 pause.setText("Szünetek száma: "+rs.getString("szunet"));
+                dateOfPlay = rs.getDate("idopont");
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

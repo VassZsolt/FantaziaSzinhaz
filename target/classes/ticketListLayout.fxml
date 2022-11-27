@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" stylesheets="ticketListLayout.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TicketListItemController">
+<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="600.0" stylesheets="ticketListLayout.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TicketListItemController">
    <children>
       <Label fx:id="emailText" layoutX="182.0" layoutY="151.0" prefHeight="20.0" prefWidth="102.0" text="Email:">
          <font>
@@ -18,7 +18,7 @@
          </font></Label>
       <Label fx:id="titleText" layoutX="182.0" layoutY="21.0" prefHeight="20.0" prefWidth="301.0" text="Cím:">
          <font>
-            <Font size="13.0" />
+            <Font name="System Bold" size="14.0" />
          </font></Label>
       <Label fx:id="nicknameText" layoutX="182.0" layoutY="124.0" prefHeight="27.0" prefWidth="308.0" text="Becenév:">
          <font>

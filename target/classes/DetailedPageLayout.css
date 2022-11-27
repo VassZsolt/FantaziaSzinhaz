@@ -1,3 +1,8 @@
+#background{
+    -fx-background-color: #f7de9c;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
 #bookButton {
     -fx-background-radius: 10;
     -fx-border-radius: 10;
@@ -28,12 +33,10 @@
     -fx-background-color: #f2766d;
     -fx-text-fill: white;
 }
-#stackPane1, #stackPane2, #stackPane3, #stackPane4, #stackPane5, #stackPane6, #stackPane7, #stackPane8 {
+#stackPane1, #stackPane2, #scrollPane1, #scrollPane2 {
     -fx-background-color: #f7de9c;
     -fx-background-radius: 10;
-    -fx-border-width: 1;
     -fx-border-radius: 10;
-    -fx-border-color: gray;
 }
 #AnchorPane {
     -fx-background-color: white;

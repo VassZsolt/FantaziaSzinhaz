@@ -35,11 +35,9 @@ public class ListItemController {
     @FXML
     private Label theaterHallText;
 
-    private int hallId;
     private int playId;
 
     public void setData(Play play) {
-        hallId = play.getHallId();
         dateText.setText(play.getDate().toString());
         genreText.setText("Műfaj: " + play.getGenre());
         titleText.setText(play.getTitle());
@@ -84,6 +82,7 @@ public class ListItemController {
         hallController.initialize();
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
+        stage.setResizable(false);
         root.requestFocus();
         stage.show();
     }
@@ -98,6 +97,7 @@ public class ListItemController {
         detailedPageController.initialize();
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
+        stage.setResizable(false);
         root.requestFocus();
         stage.show();
     }
